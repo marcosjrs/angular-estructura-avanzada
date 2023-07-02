@@ -6,6 +6,7 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import { Observable, catchError, of, throwError } from 'rxjs';
+import { HttpStatus } from '../enums/http-status';
  
 
 @Injectable()
@@ -17,7 +18,7 @@ export class ErrorsInterceptor implements HttpInterceptor {
     console.log("[url] ", request.url);
     return next.handle(request).pipe(
       catchError( (error) => {
-        if(error.status === 404){
+        if(error.status === HttpStatus.NOT_FOUND){
           return throwError(()=>'Not Found URL');
         }
         // return throwError(error.message); // esta es la forma de como se hacía antes
