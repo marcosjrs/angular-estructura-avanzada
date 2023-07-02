@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Post } from './core/models/Post';
+import { PokeapiService } from './core/services/pokeapi.service';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +7,12 @@ import { Post } from './core/models/Post';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  constructor(private readonly httpClient:HttpClient){}
+  constructor(private readonly pokeSvc:PokeapiService){}
 
   ngOnInit(): void {
-    this.httpClient.get<Post[]>('https://jsonplaceholder.typicode.commmm/posts').subscribe(
+    this.pokeSvc.getPokemonList().subscribe(
       {
-        next:(posts) => console.log(posts.length),
+        next:(pokes) => console.log(pokes.results),
         error:(err) => console.log('Error', err)
       }
     )
