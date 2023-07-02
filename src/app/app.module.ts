@@ -8,6 +8,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ErrorsInterceptor } from './core/interceptors/errors.interceptor';
 import { SharedModule } from './shared/shared.module';
 import { LayoutModule } from './layout/layout.module';
+import { PagesModule } from './pages/pages.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -17,9 +19,11 @@ import { LayoutModule } from './layout/layout.module';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    RouterModule,
     CoreModule,
     SharedModule,
-    LayoutModule
+    LayoutModule,
+    PagesModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
