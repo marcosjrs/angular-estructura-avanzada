@@ -6,7 +6,7 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import { Observable, catchError, of, throwError } from 'rxjs';
-import { HttpStatus } from '../enums/http-status';
+import { HttpStatus } from '../../shared/enums/http-status';
  
 
 @Injectable()
