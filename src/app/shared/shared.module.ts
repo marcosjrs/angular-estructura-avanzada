@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ButtonComponent } from './components/button/button.component';
+import { LabelComponent } from './components/label/label.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ButtonComponent,
+    LabelComponent
+  ],
   imports: [
     CommonModule
   ]
