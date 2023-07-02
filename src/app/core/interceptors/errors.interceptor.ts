@@ -17,6 +17,9 @@ export class ErrorsInterceptor implements HttpInterceptor {
     console.log("[url] ", request.url);
     return next.handle(request).pipe(
       catchError( (error) => {
+        if(error.status === 404){
+          return throwError(()=>'Not Found URL');
+        }
         // return throwError(error.message); // esta es la forma de como se hacía antes
         return throwError(()=>error.message);
       }) 

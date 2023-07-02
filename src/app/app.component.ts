@@ -11,8 +11,11 @@ export class AppComponent implements OnInit {
   constructor(private readonly httpClient:HttpClient){}
 
   ngOnInit(): void {
-    this.httpClient.get<Post[]>('https://jsonplaceholder.typicode.com/posts').subscribe(
-      (posts) => console.log(posts)
+    this.httpClient.get<Post[]>('https://jsonplaceholder.typicode.commmm/posts').subscribe(
+      {
+        next:(posts) => console.log(posts.length),
+        error:(err) => console.log('Error', err)
+      }
     )
   }
 
