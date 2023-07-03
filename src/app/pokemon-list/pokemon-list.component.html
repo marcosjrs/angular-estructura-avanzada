@@ -1,5 +1,8 @@
 <h2>Pokemons</h2>
 <hr/>
+<div *ngIf="pokemons.length<=0" class="d-flex justify-content-center">
+  <div class="spinner-border" role="status"></div>
+</div>
 <div class="row">
   <div class="col-12 col-md-4" *ngFor="let pokemon of pokemons; index as index">
     <app-pokemon-item [pokemon]="pokemon"/>
