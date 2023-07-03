@@ -1,1 +1,7 @@
-<p>pokemon-list works!</p>
+<h2>Pokemons</h2>
+<hr/>
+<div class="row">
+  <div class="col-12 col-md-4" *ngFor="let pokemon of pokemons; index as index">
+    <app-pokemon-item [pokemon]="pokemon"/>
+  </div>
+</div>
